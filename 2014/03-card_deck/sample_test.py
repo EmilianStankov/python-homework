@@ -8,14 +8,12 @@ Card.__hash__ = lambda self: 1
 
 
 def random_cards(count=1):
-    if count == 1:
-        return Card(random.choice(list(RANKS.values())),
-                    random.choice(list(SUITS.values())))
-
-    cards = set()
-    while len(cards) < count:
-        cards.add(Card(random.choice(list(RANKS.values())),
+    cards = []
+    i = 0
+    while i < count:
+        cards.append(Card(random.choice(list(RANKS.values())),
                        random.choice(list(SUITS.values()))))
+        i += 1
 
     return cards
 
